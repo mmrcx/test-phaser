@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm dev",
+      "type": "shell",
+      "command": "npm run start",
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "fileLocation": "relative",
+          "pattern": [
+            {
+              "regexp": "ERROR",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": false,
+            "beginsPattern": "webpack-dev-server",
+            "endsPattern": "Compiled successfully."
+          }
+        }
+      ]
+    },
+    {
+      "label": "kill-terminal",
+      "type": "process",
+      "command": "${command:workbench.action.terminal.kill}"
+    }
+  ]
+}
